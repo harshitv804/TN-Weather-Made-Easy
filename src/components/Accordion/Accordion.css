@@ -1,0 +1,47 @@
+.accordion-open {
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #ccc;
+    border-radius: 20px;
+  }
+
+  .accordion {
+    border-radius: 5px;
+    width: 100%;
+    border-radius: 25px;
+
+  }
+  
+  .accordion-header {
+    background-color: #ffffff;
+    padding: 0px 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 5px 20px;
+  }
+  
+  .accordion-content {
+    padding-top: 10px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 0px 0px 20px 20px;
+  }
+
+  /* Responsive Styles */
+@media (max-width: 768px) { /* Adjust this value based on your needs */
+    .imd-nowcast-accordion-grid {
+        display: flex;
+        flex-direction: column; /* Stack items in a single column */
+    }
+
+    .accordion {
+        width: 100%; /* Full width on mobile */
+    }
+}

@@ -1,0 +1,58 @@
+p {
+    font-size: 16px;
+  }
+  .glass-morph {
+    /* From https://css.glass */
+background: rgba(255, 255, 255, 0.73);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(7px);
+-webkit-backdrop-filter: blur(7px);
+border: 1px solid rgba(255, 255, 255, 1);
+animation: fadeInAnimation ease 2s;
+animation-iteration-count: 1;
+animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  body {
+    margin: 0px;
+    background-color: lightblue;
+    font-family: "Poppins", Arial,sans-serif;
+}
+
+.container{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clickable-image {
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+    border: 1px solid lightgray;
+    transition: border-color 0.3s;
+    border-radius: 10px;
+
+}
+.tipbox {
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid lightgray;
+    margin-bottom: 20px;
+    
+}
+/* Hover and focus styles */
+.dropdown-select:hover, .clickable-image:hover {
+    border-color: #003366; /* Change border color on hover */
+}

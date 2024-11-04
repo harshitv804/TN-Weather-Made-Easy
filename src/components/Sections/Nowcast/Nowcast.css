@@ -1,0 +1,119 @@
+.nowcast-container{
+    max-width: 1200px;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 25px;
+    padding: 30px;
+}
+
+.wind-accordion-grid, .imd-nowcast-accordion-grid{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; 
+}
+
+.wind-accordion-grid>*,.imd-nowcast-accordion-grid > * {
+    flex: 1 1 calc(33.333% - 1rem); 
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) { /* Adjust this value based on your needs */
+    .wind-accordion-grid,.imd-nowcast-accordion-grid {
+        display: flex;
+        flex-direction: column; /* Stack items in a single column */
+    }
+}
+
+.dropdown-container {
+    margin: 20px 0; /* Add some margin for spacing */
+    display: flex;
+    flex-direction: column; /* Stack label and select vertically */
+    align-items: flex-start; /* Align items to the start */
+}
+
+.dropdown-label {
+    font-weight: bold;
+    margin-bottom: 10px; /* Space between label and select */
+}
+
+.dropdown-select {
+    padding: 15px; /* Inner padding for better spacing */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 15px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background color */
+    font-size: 16px; /* Font size for better readability */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+    width: 100%; /* Make select full width */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.third-party-radar-grid-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 1rem; 
+}
+
+.third-party-radar-box1, .third-party-radar-box2, .third-party-radar-box3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    color: white;
+    border: 1px solid #ccc;
+    text-decoration: underline;
+    border-radius: 20px;
+    text-align: center;
+    height: 100px;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.third-party-radar-box1 {
+    background-image: url('/windy-logo.png');
+    background-color: #A50700;
+
+}
+
+.third-party-radar-box2 {
+    background-image: url('/accu-logo.png');
+    background-color: white;
+}
+
+.third-party-radar-box3 {
+    background-image: url('/rain-alarm.png');
+    background-color: white;
+}
+
+
+.third-party-radar-box1::before, .third-party-radar-box2::before,.third-party-radar-box3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.619); /* Adjust opacity as needed */
+    border-radius: 20px; /* Matches the border-radius of the container */
+    z-index: 0; /* Ensures overlay sits above background but below content */
+}
+
+/* Ensure content is above the overlay */
+.third-party-radar-box1 > *, .third-party-radar-box2 > *,.third-party-radar-box3 > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+    .third-party-radar-grid-container {
+        grid-template-columns: 1fr; /* 1 column for screens 768px or smaller */
+    }
+    .third-party-radar-box1, .third-party-radar-box2, .third-party-radar-box3 {
+        height: 80px;
+    }
+}
