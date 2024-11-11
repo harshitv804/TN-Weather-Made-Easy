@@ -4,7 +4,7 @@ const Footer = () => {
     return (
       <footer className='footer'>
         <p className="glass-morph footer-text">
-          &copy; {getCurrentDate()} Made with ❤️ by&nbsp;
+          &copy; {getCurrentDate()} Maintained by&nbsp;
            <a href="https://github.com/harshitv804" target="_blank" rel="noopener noreferrer">
             Harshit V
           </a>&nbsp;x AI

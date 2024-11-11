@@ -53,13 +53,26 @@ const WindandHumidity = () => {
           </p>
         </div>
         <div className="wind-accordion-grid">
-          <Accordion expand={true} title={"Wind (Windy App)"}>
+          <Accordion expand={true} title={"Wind (Windy App, Zoom Earth)"}>
             <iframe
               width="100%"
               height="400px"
               src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=6&overlay=wind&product=ecmwf&level=surface&lat=11.269&lon=82.561&message=true"
               style={{ borderRadius: "15px", border: "1px solid #ccc" }}
             ></iframe>
+                        <a
+              href="https://zoom.earth/maps/wind-speed/#view=10.471,81.9395,7z/model=gfs"
+              target="_blank"
+            >
+              <div className="grid-item glass-morph">
+                <div className="profile-pic">
+                  <img src="zoom-earth.png" />
+                </div>
+                <div className="profile-name">
+                  <h4>Zoom Earth</h4>
+                </div>
+              </div>
+            </a>
           </Accordion>
 
           <Accordion expand={true} title={"Wind (Earth Null School)"}>
@@ -78,6 +91,23 @@ const WindandHumidity = () => {
               src="https://earth.nullschool.net/#current/wind/surface/level/overlay=total_precipitable_water/winkel3=79.53,10.34,3383"
               style={{ borderRadius: "15px", border: "1px solid #ccc" }}
             ></iframe>
+                      <p
+            style={{
+              margin: "0px",
+              textAlign: "justify",
+              paddingTop:'10px',
+              paddingBottom: "10px",
+            }}
+          >                      <span
+          style={{
+            fontWeight: "bold",
+            color: 'cyan',
+            textDecoration: "underline",
+          }}
+        >Cyan: 
+        </span>
+             More Winds, Area of Convergence for Rain Development.
+          </p>
           </Accordion>
           <Accordion expand={isDesktopOrTablet} title={"Dry Air (Tropical Tidbits)"}>
             <a

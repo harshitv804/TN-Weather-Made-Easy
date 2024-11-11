@@ -37,13 +37,13 @@ const ImdRadar = () => {
       // Trigger a re-render by updating radar URLs (they're the same URLs here but would refresh the state)
       setRadarUrls({
         Chennai: [
-          { url: "https://mausam.imd.gov.in/Radar/sri_cni.gif", range: "120Km Range" },
+          { url: "https://mausam.imd.gov.in/Radar/sri_cni.gif", range: "120Km Range (Intensity)" },
           { url: "https://mausam.imd.gov.in/Radar/ppi_cni.gif", range: "150Km Range" },
           { url: "https://mausam.imd.gov.in/Radar/ppz_cni.gif", range: "500Km Range" },
         ],
         Karaikal: [
           { url: "https://mausam.imd.gov.in/Radar/ppi_kkl.gif", range: "150Km Range" },
-          { url: "https://mausam.imd.gov.in/Radar/ppv_kkl.gif", range: "250Km Range" },
+          { url: "https://mausam.imd.gov.in/Radar/ppv_kkl.gif", range: "250Km Range (Intensity)" },
           { url: "https://mausam.imd.gov.in/Radar/ppz_kkl.gif", range: "500Km Range" },
         ],
       });

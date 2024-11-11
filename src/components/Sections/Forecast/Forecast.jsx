@@ -44,7 +44,7 @@ const Forecast = () => {
               paddingBottom: "10px",
             }}
           >
-Use the Windy app for rain forecasts with popular models like ECMWF (best for mid-range) and GFS (ideal for short-term). Additional models are available on Tropical Tidbits. For optimal accuracy, rely on Forecast for precaution and Nowcast with wind convergence for real-time updates.
+Use the Windy app for rain forecasts with popular models like ECMWF (best for mid-range) and GFS (ideal for short-term). Additional models are available on Tropical Tidbits. Rely on Forecast only for precaution, real-time Rainfall quantum is only known by using Nowcast and wind convergence. 
           </p>
         </div>
         <div className="wind-accordion-grid">
@@ -56,9 +56,9 @@ Use the Windy app for rain forecasts with popular models like ECMWF (best for mi
               style={{ borderRadius: "15px", border: "1px solid #ccc" }}
             ></iframe>
           </Accordion>
-          <Accordion expand={true} title={"Forecast (GFS Model)"}>
+          <Accordion expand={true} title={"Ensemble Forecast"}>
           <a
-              href="https://meteologix.com/in/model-charts/standard/india/precipitation-total.html"
+              href="https://meteologix.com/in/forecast/ensemble"
               target="_blank"
             >
               <p
@@ -76,6 +76,15 @@ Use the Windy app for rain forecasts with popular models like ECMWF (best for mi
                 src={"mx-logo.png"}
               />
             </a>
+            <p
+            style={{
+              margin: "0px",
+              textAlign: "justify",
+              paddingBottom: "10px",
+            }}
+          >
+Inside the website enter your city and get forecast for Temperature, Precipitation etc.
+          </p>
           </Accordion>
           <Accordion expand={isDesktopOrTablet} title={"Forecast (Tropical Tidbits)"}>
             <a
@@ -97,6 +106,15 @@ Use the Windy app for rain forecasts with popular models like ECMWF (best for mi
                 src={"tropical-tit.png"}
               />
             </a>
+            <p
+            style={{
+              margin: "0px",
+              textAlign: "justify",
+              paddingBottom: "10px",
+            }}
+          >
+Inside the website move the slider to see the weather conditions at each forecast time.
+          </p>
           </Accordion>
         </div>
       </div>

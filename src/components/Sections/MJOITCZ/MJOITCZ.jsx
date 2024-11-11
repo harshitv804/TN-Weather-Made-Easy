@@ -126,13 +126,13 @@ const MJOITCZ = () => {
               </p>
               <PhotoView
                 src={
-                  "https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/spatial_olrmap_full.gif"
+                  "https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/spatial_olrmap_CA_full.gif"
                 }
               >
                 <img
                   className="clickable-image"
                   src={
-                    "https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/spatial_olrmap_full.gif"
+                    "https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/spatial_olrmap_CA_full.gif"
                   }
                   alt="MJO OLR"
                 />

@@ -45,7 +45,7 @@ const TropicalCyclone = () => {
           </p>
         </div>
         <div className="wind-accordion-grid">
-          <Accordion expand={true} title={"ECMWF Cyclone Ensemble)"}>
+          <Accordion expand={true} title={"ECMWF (Cyclone Ensemble)"}>
           <p
             style={{
               margin: "0px",
