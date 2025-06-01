@@ -6,9 +6,9 @@ import { PhotoView, PhotoProvider } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 
 const items = [
-  { color: "blue", title: "Blue", description: "Minimal precipitation or light." },
-  { color: "orange", title: "Orange", description: "Moderate precipitation." },
-  { color: "red", title: "Red", description: "Heavy precipitation." },
+  { color: "blue", title: "Blue", description: "Light-Moderate precipitation." },
+  { color: "orange", title: "Orange", description: "Moderate-Heavy precipitation." },
+  { color: "red", title: "Red", description: "Heavy-Very Heavy precipitation." },
 ];
 
 const ImdRadar = () => {
@@ -20,37 +20,76 @@ const ImdRadar = () => {
   
   const [radarUrls, setRadarUrls] = useState({
     Chennai: [
-      { url: "https://mausam.imd.gov.in/Radar/sri_cni.gif", range: "120Km Range (Intensity)" },
-      { url: "https://mausam.imd.gov.in/Radar/ppi_cni.gif", range: "150Km Range" },
-      { url: "https://mausam.imd.gov.in/Radar/ppz_cni.gif", range: "500Km Range" },
+          { url: "https://mausam.imd.gov.in/Radar/sri_cni.gif", range: "120Km Range (Intensity)" },
+          { url: "https://mausam.imd.gov.in/Radar/ppi_cni.gif", range: "150Km Range" },
+          { url: "https://mausam.imd.gov.in/Radar/ppz_cni.gif", range: "500Km Range" },
+          { url: "https://mausam.imd.gov.in/Radar/ppv_cni.gif", range: "Wind Direction" },
+        ],
+        Karaikal: [
+          { url: "https://mausam.imd.gov.in/Radar/ppi_kkl.gif", range: "150Km Range" },
+          { url: "https://mausam.imd.gov.in/Radar/sri_kkl.gif", range: "250Km Range (Intensity)" },
+          { url: "https://mausam.imd.gov.in/Radar/ppz_kkl.gif", range: "500Km Range" },
+          { url: "https://mausam.imd.gov.in/Radar/ppv_kkl.gif", range: "Wind Direction" },
+        ],
+        Sriharikota: [
+      { url: "https://mausam.imd.gov.in/Radar/ppi_shr.gif", range: "250Km Range" },
+      { url: "https://mausam.imd.gov.in/Radar/sri_shr.gif", range: "200Km Range (Intensity)" },
+      { url: "https://mausam.imd.gov.in/Radar/ppz_shr.gif", range: "500Km Range" },
+      { url: "https://mausam.imd.gov.in/Radar/ppv_shr.gif", range: "Wind Direction" },
     ],
-    Karaikal: [
-      { url: "https://mausam.imd.gov.in/Radar/ppi_kkl.gif", range: "150Km Range" },
-      { url: "https://mausam.imd.gov.in/Radar/sri_kkl.gif", range: "150Km Range (Intensity)" },
-      { url: "https://mausam.imd.gov.in/Radar/ppz_kkl.gif", range: "500Km Range" },
+    Kochi: [
+      { url: "https://mausam.imd.gov.in/Radar/ppi_koc.gif", range: "200Km Range" },
+      { url: "https://mausam.imd.gov.in/Radar/sri_koc.gif", range: "160Km Range (Intensity)" },
+      { url: "https://mausam.imd.gov.in/Radar/ppz_koc.gif", range: "500Km Range" },
+      { url: "https://mausam.imd.gov.in/Radar/ppv_koc.gif", range: "Wind Direction" },
     ],
+    Thiruvananthapuram: [
+      { url: "https://mausam.imd.gov.in/Radar/ppi_tvm.gif", range: "240Km Range" },
+      { url: "https://mausam.imd.gov.in/Radar/sri_tvm.gif", range: "124Km Range (Intensity)" },
+      { url: "https://mausam.imd.gov.in/Radar/ppz_tvm.gif", range: "365Km Range" },
+      { url: "https://mausam.imd.gov.in/Radar/ppv_tvm.gif", range: "Wind Direction" },
+    ]
   });
 
   useEffect(() => {
     const refreshImage = () => {
       setLoading(true);
-      // Trigger a re-render by updating radar URLs (they're the same URLs here but would refresh the state)
       setRadarUrls({
         Chennai: [
           { url: "https://mausam.imd.gov.in/Radar/sri_cni.gif", range: "120Km Range (Intensity)" },
           { url: "https://mausam.imd.gov.in/Radar/ppi_cni.gif", range: "150Km Range" },
           { url: "https://mausam.imd.gov.in/Radar/ppz_cni.gif", range: "500Km Range" },
+          { url: "https://mausam.imd.gov.in/Radar/ppv_cni.gif", range: "Wind Direction" },
         ],
         Karaikal: [
           { url: "https://mausam.imd.gov.in/Radar/ppi_kkl.gif", range: "150Km Range" },
-          { url: "https://mausam.imd.gov.in/Radar/ppv_kkl.gif", range: "250Km Range (Intensity)" },
+          { url: "https://mausam.imd.gov.in/Radar/sri_kkl.gif", range: "250Km Range (Intensity)" },
           { url: "https://mausam.imd.gov.in/Radar/ppz_kkl.gif", range: "500Km Range" },
+          { url: "https://mausam.imd.gov.in/Radar/ppv_kkl.gif", range: "Wind Direction" },
         ],
+        Sriharikota: [
+      { url: "https://mausam.imd.gov.in/Radar/ppi_shr.gif", range: "250Km Range" },
+      { url: "https://mausam.imd.gov.in/Radar/sri_shr.gif", range: "200Km Range (Intensity)" },
+      { url: "https://mausam.imd.gov.in/Radar/ppz_shr.gif", range: "500Km Range" },
+      { url: "https://mausam.imd.gov.in/Radar/ppv_shr.gif", range: "Wind Direction" },
+    ],
+    Kochi: [
+      { url: "https://mausam.imd.gov.in/Radar/ppi_koc.gif", range: "200Km Range" },
+      { url: "https://mausam.imd.gov.in/Radar/sri_koc.gif", range: "160Km Range (Intensity)" },
+      { url: "https://mausam.imd.gov.in/Radar/ppz_koc.gif", range: "500Km Range" },
+      { url: "https://mausam.imd.gov.in/Radar/ppv_koc.gif", range: "Wind Direction" },
+    ],
+    Thiruvananthapuram: [
+      { url: "https://mausam.imd.gov.in/Radar/ppi_tvm.gif", range: "240Km Range" },
+      { url: "https://mausam.imd.gov.in/Radar/sri_tvm.gif", range: "124Km Range (Intensity)" },
+      { url: "https://mausam.imd.gov.in/Radar/ppz_tvm.gif", range: "365Km Range" },
+      { url: "https://mausam.imd.gov.in/Radar/ppv_tvm.gif", range: "Wind Direction" },
+    ]
       });
       setTimeout(() => setLoading(false), 500);
     };
 
-    const intervalId = setInterval(refreshImage, 300000);
+    const intervalId = setInterval(refreshImage, 600000);
     return () => clearInterval(intervalId);
   }, []);
 
@@ -81,6 +120,9 @@ const ImdRadar = () => {
         >
           <option value="Chennai">Chennai</option>
           <option value="Karaikal">Karaikal</option>
+          <option value="Sriharikota">Sriharikota</option>
+          <option value="Kochi">Kochi</option>
+          <option value="Thiruvananthapuram">Thiruvananthapuram</option>
         </select>
       </div>
       <div className="tipbox">
@@ -91,6 +133,8 @@ const ImdRadar = () => {
         Presented below are the IMD Nowcast radar images, updated with a 20-minute delay. Each radar display illustrates the coverage area within a specific radius, allowing for real-time monitoring of weather conditions. Observing the wind flow direction will provide insights into the movement of cloud formations and potential weather changes in the region.
         </p>
         <div>
+          <div className="tipbox">
+          <strong><p>Rain Clouds:</p></strong>
           <ul style={{ listStyleType: "none", padding: 0 }}>
             {items.map((item, index) => (
               <li key={index} style={{ marginBottom: "8px", fontSize: "16px" }}>
@@ -107,7 +151,40 @@ const ImdRadar = () => {
               </li>
             ))}
           </ul>
+          </div>
         </div>
+        <div className="tipbox">
+        <strong><p>Wind Direction:</p></strong>
+        <p style={{ margin: "0px", textAlign: "justify" }}>
+        The Wind direction maps shows the wind movement inside rain-bearing clouds (helps identify cyclones, wind shear, and turbulence). it shows wind speed and direction relative to the radar.
+        </p>
+        <ul style={{ listStyleType: "none", padding: 0 }}>
+        <li style={{ marginBottom: "8px", fontSize: "16px" }}>
+                <span
+                  style={{
+                    fontWeight: "bold",
+                    color: "blue",
+                    textDecoration: "underline",
+                  }}
+                >
+                  Blue:
+                </span>
+                <span>Wind moving toward the radar.</span>
+              </li>
+              <li style={{ marginBottom: "8px", fontSize: "16px" }}>
+                <span
+                  style={{
+                    fontWeight: "bold",
+                    color: "orange",
+                    textDecoration: "underline",
+                  }}
+                >
+                  Orange:
+                </span>
+                <span>Wind moving away from the radar.</span>
+              </li>
+              </ul>
+              </div>
       </div>
       <div className="imd-nowcast-accordion-grid">
         {radarUrls[selectedLoc].map((item, index) => (

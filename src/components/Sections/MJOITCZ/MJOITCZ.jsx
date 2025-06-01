@@ -1,7 +1,7 @@
 import Accordion from "../../Accordion/Accordion.jsx";
 import { useState, useEffect } from "react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
-import { items, items1 } from "./mjoConstants.js";
+import { items, items1, items2 } from "./mjoConstants.js";
 
 const MJOITCZ = () => {
   const [isDesktopOrTablet, setIsDesktopOrTablet] = useState(
@@ -26,7 +26,7 @@ const MJOITCZ = () => {
             marginBottom: "15px",
           }}
         >
-          MJO🔄, ITCZ〰
+          MJO🔄 and El Niño☀️ La Niña🌧️
         </h2>
         <div className="tipbox">
           <p style={{ margin: "0px", fontSize: "20px", paddingBottom: "10px" }}>
@@ -46,38 +46,6 @@ const MJOITCZ = () => {
             When the MJO wave brings convection to a region, you can expect
             rainy weather. When it brings suppression, expect drier condition.
           </p>
-          <p
-            style={{
-              margin: "0px",
-              textAlign: "justify",
-              paddingBottom: "10px",
-            }}
-          >
-            ITCZ like a big, warm belt around the Earth where winds from North
-            and South converge. It's a zone of converging winds near the equator
-            which is warm and moist where, it creates a lot of clouds and rain.
-            If it's in TN region it will create extra rains. Also helps in
-            sterring cyclone. Example:
-          </p>
-          <PhotoProvider>
-            <p
-              style={{
-                fontSize: "13px",
-                textAlign: "center",
-                margin: "0px 0px 10px 0px",
-              }}
-            >
-              (Click the Image to View!)
-            </p>
-            <PhotoView src={"itcz-tn.png"}>
-              <img
-                style={{ width: "150px" }}
-                className="clickable-image"
-                src={"itcz-tn.png"}
-                alt="MJO"
-              />
-            </PhotoView>
-          </PhotoProvider>
         </div>
         <div className="wind-accordion-grid">
           <Accordion
@@ -197,8 +165,28 @@ const MJOITCZ = () => {
               </PhotoView>
             </PhotoProvider>
           </Accordion>
-          <Accordion expand={isDesktopOrTablet} title={"ITCZ Finder"}>
-            {" "}
+          <Accordion expand={true} title={"El Niño and La Niña Effect"}>
+            <div>
+              <ul style={{ listStyleType: "none", padding: 0 }}>
+                {items2.map((item, index) => (
+                  <li
+                    key={index}
+                    style={{ marginBottom: "8px", fontSize: "16px" }}
+                  >
+                    <span
+                      style={{
+                        fontWeight: "bold",
+                        color: item.color,
+                        textDecoration: "underline",
+                      }}
+                    >
+                      {item.title}:
+                    </span>
+                    <span> {item.description}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
             <p
               style={{
                 margin: "0px",
@@ -206,46 +194,32 @@ const MJOITCZ = () => {
                 paddingBottom: "10px",
               }}
             >
-              Look for zone of converging winds or clouds near the equator which creates a lot of clouds and rain in that zone. More rains if the zone is near TN. For cyclone to favour towards TN, ITCZ must be below India and multiple factors are involved.
+              El Niño and La Niña are climate patterns that originate in the tropical Pacific Ocean and have global impacts on weather, including in India. They are part of a cycle called the El Niño–Southern Oscillation (ENSO).
             </p>
-            <p
-              style={{
-                fontSize: "13px",
-                textAlign: "center",
-                margin: "0px 0px 10px 0px",
-              }}
-            >
-              (Click the Images to View the Website!)
-            </p>
-            <a
-              href="https://zoom.earth/maps/satellite/#view=6.515,81.029,6z/overlays=wind"
-              target="_blank"
-            >
-              <div className="grid-item glass-morph">
-                <div className="profile-pic">
-                  <img src="zoom-earth.png" />
-                </div>
-                <div className="profile-name">
-                  <h4>Zoom Earth</h4>
-                </div>
-              </div>
-            </a>
-            <a
-              href="https://earth.nullschool.net/#current/wind/surface/level/overlay=total_precipitable_water/orthographic=-279.81,7.82,2657"
-              target="_blank"
-            >
-              <div
-                className="grid-item glass-morph"
-                style={{ marginTop: "15px" }}
+            <PhotoProvider>
+              <p
+                style={{
+                  fontSize: "13px",
+                  textAlign: "center",
+                  margin: "0px 0px 10px 0px",
+                }}
               >
-                <div className="profile-pic">
-                  <img src="nullearth.png" />
-                </div>
-                <div className="profile-name">
-                  <h4>Earth Null School</h4>
-                </div>
-              </div>
-            </a>
+                (Click the Image to View!)
+              </p>
+              <PhotoView
+                src={
+                  "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_update/ssta_c.gif"
+                }
+              >
+                <img
+                  className="clickable-image"
+                  src={
+                    "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_update/ssta_c.gif"
+                  }
+                  alt="MJO"
+                />
+              </PhotoView>
+            </PhotoProvider>
           </Accordion>
         </div>
       </div>

@@ -17,34 +17,34 @@
     box-sizing: border-box;
 }
 
-@media (max-width: 768px) { /* Adjust this value based on your needs */
+@media (max-width: 768px) {
     .wind-accordion-grid,.imd-nowcast-accordion-grid {
         display: flex;
-        flex-direction: column; /* Stack items in a single column */
+        flex-direction: column; 
     }
 }
 
 .dropdown-container {
-    margin: 20px 0; /* Add some margin for spacing */
+    margin: 20px 0; 
     display: flex;
-    flex-direction: column; /* Stack label and select vertically */
-    align-items: flex-start; /* Align items to the start */
+    flex-direction: column;
+    align-items: flex-start; 
 }
 
 .dropdown-label {
     font-weight: bold;
-    margin-bottom: 10px; /* Space between label and select */
+    margin-bottom: 10px; 
 }
 
 .dropdown-select {
-    padding: 15px; /* Inner padding for better spacing */
-    border: 1px solid #ccc; /* Border color */
-    border-radius: 15px; /* Rounded corners */
-    background-color: #f9f9f9; /* Light background color */
-    font-size: 16px; /* Font size for better readability */
-    transition: border-color 0.3s; /* Smooth transition for border color */
-    width: 100%; /* Make select full width */
-    cursor: pointer; /* Pointer cursor on hover */
+    padding: 15px; 
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-color: #f9f9f9; 
+    font-size: 16px; 
+    transition: border-color 0.3s; 
+    width: 100%; 
+    cursor: pointer; 
 }
 
 .third-party-radar-grid-container{
@@ -53,7 +53,7 @@
     gap: 1rem; 
 }
 
-.third-party-radar-box1, .third-party-radar-box2, .third-party-radar-box3 {
+.third-party-radar-box1, .third-party-radar-box2, .third-party-radar-box3,.third-party-radar-box4 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,34 +86,35 @@
     background-image: url('/rain-alarm.png');
     background-color: white;
 }
+.third-party-radar-box4 {
+    background-image: url('/zoom-earth.png');
+    background-color: white;
+}
 
 
-.third-party-radar-box1::before, .third-party-radar-box2::before,.third-party-radar-box3::before {
+.third-party-radar-box1::before, .third-party-radar-box2::before,.third-party-radar-box3::before,.third-party-radar-box4::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.619); /* Adjust opacity as needed */
-    border-radius: 20px; /* Matches the border-radius of the container */
-    z-index: 0; /* Ensures overlay sits above background but below content */
+    background-color: rgba(0, 0, 0, 0.619);
+    border-radius: 20px; 
+    z-index: 0; 
 }
 
-/* Ensure content is above the overlay */
-.third-party-radar-box1 > *, .third-party-radar-box2 > *,.third-party-radar-box3 > * {
+.third-party-radar-box1 > *, .third-party-radar-box2 > *,.third-party-radar-box3 > *,.third-party-radar-box4 > * {
     position: relative;
     z-index: 2;
 }
 
 
-
-/* Media query for mobile screens */
 @media (max-width: 768px) {
     .third-party-radar-grid-container {
-        grid-template-columns: 1fr; /* 1 column for screens 768px or smaller */
+        grid-template-columns: 1fr;
     }
-    .third-party-radar-box1, .third-party-radar-box2, .third-party-radar-box3 {
+    .third-party-radar-box1, .third-party-radar-box2, .third-party-radar-box3,.third-party-radar-box4 {
         height: 80px;
     }
 }

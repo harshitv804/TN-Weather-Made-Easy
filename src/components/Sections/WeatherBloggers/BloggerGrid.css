@@ -14,7 +14,11 @@
     padding: 10px;
     border-radius: 20px;
   }
-  
+  .grid-item-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
   .profile-pic img {
     width: 50px;
     height: 50px;
