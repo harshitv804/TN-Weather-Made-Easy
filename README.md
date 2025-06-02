@@ -1,4 +1,4 @@
-# Tamil Nadu Weather made Easy! Made for the Nobbies by a Nobbie.
+# Tamil Nadu Weather made Easy! Made for the Noobies by a Noobie.
 <img src="https://github.com/user-attachments/assets/c589a172-bbc2-43cc-9eef-fa3a10571839" width="300"/>
 
 ## Features:
